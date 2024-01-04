@@ -1,25 +1,28 @@
 
+//musicas do ambiente
 const bgAudio = new Audio('./src/audios/swing.wav');
 bgAudio.volume = 0.2;
-const gameOver = new Audio('./src/audios/stranger-things-124008.wav');
+bgAudio.play();
+const gameOver = new Audio('./src/audios/gameOver.mp3');
 gameOver.volume= 0.5;
-
+//captura h1 e botao reiniciar
 let titulo = document.querySelector('.titulo');
 let botaoReiniciar = document.querySelector('.esconda');
 
+//efeitos sonoros
 const sfx = [
     new Audio('./src/audios/haha.mp3'),
     new Audio('./src/audios/ohhater.mp3'),
     new Audio('./src/audios/imback.mp3'),
   ];
-
+ 
   function soundFx(index) {
     sfx.volume = 0.5;
     sfx[index].play();
   }
+  soundFx(2);
 
-
-
+//variaveis de ambiente
 const state = {
   view: {
     squares: document.querySelectorAll(".square"),
@@ -44,14 +47,14 @@ const state = {
     
   },
 }
-
+//reinicia variaveis e mensagem fim de jogo
 function countDown() {
   state.values.tempo--;
   state.view.timeLeft.textContent = state.values.tempo;
   state.view.vidas.textContent = `x${state.values.atualVida}`;
 
   if (state.values.tempo < 1 || state.values.atualVida < 1) {
-    // state.view.score.textContent = " " ;
+    
     clearInterval(state.actions.countDownTimerId);
     clearInterval(state.actions.timerId);
     bgAudio.muted = true;
@@ -68,10 +71,9 @@ function countDown() {
     
   }
 
-  
   } 
 
-
+//define posiçao do personagem
 function randomSquare() {
   state.view.squares.forEach((square) => {
     square.classList.remove("enemy");
@@ -85,11 +87,11 @@ function randomSquare() {
 
  
  
-
+//eventos de click e pontuaçao
 function addListenerHitBox() {
-  
   state.view.squares.forEach((square) => {
     square.addEventListener("mousedown", () => {
+
       if (square.id === state.values.hitPosition){
         state.values.result++;
         state.view.score.textContent = state.values.result;
@@ -102,8 +104,10 @@ function addListenerHitBox() {
         state.values.hitPosition = null;
         soundFx(0);  
       }
+     
     });
   });
+
 }
 
 function initialize(){
@@ -111,11 +115,9 @@ function initialize(){
  
   }
 
-  soundFx(2);
-  bgAudio.play();
-  initialize();
+initialize();
 
-  
+
 
   
       

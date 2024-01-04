@@ -5,7 +5,7 @@
   height: 100vh;
   background-image: url('../images/bg.jpg');
   background-size:cover ;
-  
+  cursor: url('../images/martelo.cur') , auto;
 }
 
 .menu {
@@ -72,19 +72,20 @@
   align-items: center;
   justify-content: center;
   
-  
 }
 
 .square {
   height: 150px;
   width: 150px;
   border: 1px solid #f56928;
-  background-color: rgb(11, 26, 1);
+  background-color: #fcf80a;
   background-image: url("../images/wall.png");
   
 }
 
-
+.cursor{
+  cursor: url('../images/martelo2.cur'), auto;
+}
 
 .enemy {
   background-image: url("../images/ralph.png");
