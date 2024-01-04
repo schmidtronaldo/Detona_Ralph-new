@@ -1,0 +1,127 @@
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-image: url('../images/bg.jpg');
+  background-size:cover ;
+  
+}
+
+.menu {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 80px;
+  width: 100%;
+  background-color: #444343;
+  border-bottom: 2px solid #ff0000;
+  color: #ffffff;
+  
+}
+.menu-texto{
+  color: #ff0000;
+}
+.menu-lives {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menu-lives-icone{
+  height: 60px;
+  margin-right: 5px;
+}
+
+.menu-time h2:nth-child(2),
+.menu-score h2:nth-child(2) {
+  margin-top: 1rem;
+}
+.titulo-botao{
+  display:grid;
+  justify-content:center;
+}
+.titulo{
+  color:#130304;
+  text-align: center;
+  padding:10px;
+  
+}
+.esconda{
+  display:none;
+  position:absolute;
+  left:45%;
+  top:45%;
+}
+.restart{
+  display:block;
+  width: 140px;
+  text-align:center;
+  height: 60px;
+  border-radius: 5px;
+  background:#000000;
+  color:#f1f1ec;
+  font-weight:700;
+  border: 1px solid #444343;
+  margin:auto;
+}
+
+
+.panel {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  
+}
+
+.square {
+  height: 150px;
+  width: 150px;
+  border: 1px solid #f56928;
+  background-color: rgb(11, 26, 1);
+  background-image: url("../images/wall.png");
+  
+}
+
+
+
+.enemy {
+  background-image: url("../images/ralph.png");
+  background-size: cover;
+}
+
+
+
+@media(max-width: 640px){
+  .menu {
+   display:flex;
+   flex-wrap:wrap-reverse;
+   height: 100px;
+   font-size: small;
+  }
+  .responsivo{
+    display:flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+  }
+.menu-time h2:nth-child(2),
+.menu-score h2:nth-child(2) {
+  margin-left: 1rem;
+}
+.vidas{
+  font-size:2rem;
+  padding-bottom: 10px;
+}
+.titulo{
+ display: none;
+}
+.square{
+  width: 100px;
+  height:100px;
+}
+}
+
+
+  
+
