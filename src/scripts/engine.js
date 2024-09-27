@@ -61,7 +61,7 @@ function countDown() {
     clearInterval(state.actions.countDownTimerId);
     clearInterval(state.actions.timerId);
     bgAudio.muted = true;
-    state.view.squares.style.background-color()
+      
     titulo.textContent =`Fim de Jogo! O seu resultado foi: ${state.values.result}`;
     gameOver.play();
     
