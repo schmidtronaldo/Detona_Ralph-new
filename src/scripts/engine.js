@@ -1,13 +1,16 @@
-
+let body = document.querySelector(".panel");
 //musicas do ambiente
 const bgAudio = new Audio('./src/audios/swing.wav');
 bgAudio.volume = 0.2;
-bgAudio.play();
+bgAudio.muted = false;
+body.addEventListener('mouseover',()=>bgAudio.play());
+
 const gameOver = new Audio('./src/audios/gameOver.mp3');
 gameOver.volume= 0.5;
 //captura h1 e botao reiniciar
 let titulo = document.querySelector('.titulo');
-let botaoReiniciar = document.querySelector('.esconda');
+
+let botaoReiniciar = document.querySelector('.escondeBotaoReiniciar');
 
 //efeitos sonoros
 const sfx = [
@@ -58,7 +61,7 @@ function countDown() {
     clearInterval(state.actions.countDownTimerId);
     clearInterval(state.actions.timerId);
     bgAudio.muted = true;
-   
+    state.view.squares.style.background-color()
     titulo.textContent =`Fim de Jogo! O seu resultado foi: ${state.values.result}`;
     gameOver.play();
     
@@ -67,6 +70,7 @@ function countDown() {
 
     botaoReiniciar.onclick = ()=>{
       location.reload();
+     
    }
     
   }
@@ -111,6 +115,7 @@ function addListenerHitBox() {
 }
 
 function initialize(){
+  
   addListenerHitBox();
  
   }
